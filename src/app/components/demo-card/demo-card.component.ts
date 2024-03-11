@@ -1,9 +1,7 @@
 import {
-  AfterViewInit,
   ChangeDetectorRef,
   Component,
   ElementRef,
-  Input,
   ViewChild,
 } from '@angular/core';
 import { CardModule } from 'primeng/card';
@@ -16,10 +14,11 @@ import { CardModule } from 'primeng/card';
   styleUrl: './demo-card.component.scss'
 })
 export class DemoCardComponent {
-  @ViewChild('recipeImage') imageElement: ElementRef | undefined;
-  cardStyle = { background: '#EEEEFF' };
+  @ViewChild('image') imageElement: ElementRef | undefined;
+  cardStyle = { background: 'lightblue' };
 
-  constructor(private cd: ChangeDetectorRef) {}
+  constructor(private cd: ChangeDetectorRef) {
+  }
 
   ngAfterViewInit(): void {
     const img = this.imageElement!.nativeElement;
